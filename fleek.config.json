@@ -1,0 +1,9 @@
+{
+  "sites": [
+    {
+      "slug": "p10node",
+      "distDir": "build",
+      "buildCommand": "pnpm run build"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+name: dym9.xyz
+
+on:
+  push:
+    branches: [production]
+  workflow_dispatch:
+
+env:
+  AWS_REGION: ap-southeast-1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install pnpm dependencies
+        uses: ./.github/actions/install-pnpm-dependencies
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Build Website
+        run: pnpm build
+        env:
+          VITE_STAGE: production
+          VITE_DYM_ADDRESS: 0xe04C1f55a9A6d806f4FE9F1A2B8D2704a714E2cB
+          VITE_CONTRACT_ADDRESS: 0x0E9437Cb5956aE60E35D5626a76D83132E5a89dE
+
+      - name: Push data to S3
+        run: aws s3 sync dist/ s3://dym9.xyz/ --acl public-read

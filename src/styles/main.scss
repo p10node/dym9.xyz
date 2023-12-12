@@ -1,0 +1,129 @@
+// Copyright 2021 - 2024 Transflox LLC. All rights reserved.
+
+@import "./tailwind.css";
+
+body {
+  color: #fefefe;
+  background-color: #10061E;
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+header {
+  font-family: 'Spline Sans Mono', monospace;
+}
+
+.bg1 {
+  position: fixed;
+  width: 262px;
+  height: 262px;
+  left: -210px;
+  top: 120px;
+  flex-shrink: 0;
+  border-radius: 262px;
+  background: #FC4754;
+  filter: blur(100px);
+}
+
+.bg2 {
+  position: fixed;
+  bottom: -340px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 351px;
+  background: #FC4754;
+  width: 351px;
+  height: 271px;
+  flex-shrink: 0;
+  filter: blur(100px);
+}
+
+.bg3 {
+  position: fixed;
+  bottom: 30%;
+  right: 25%;
+  width: 262px;
+  height: 262px;
+  flex-shrink: 0;
+  border-radius: 262px;
+  background: #FC4754;
+  filter: blur(100px);
+}
+
+.card {
+  border: 2px solid rgba(255, 254, 254, 0.23);
+  background: linear-gradient(91deg, rgba(255, 254, 254, 0.23) -47.11%, rgba(255, 254, 254, 0.23) 110.32%);
+  backdrop-filter: blur(15px);
+
+  ul {
+    li {
+      margin-top: 24px;
+
+
+    }
+  }
+}
+
+.code {
+  background-color: #10061E;
+  font-family: 'Fragment Mono', monospace;
+}
+
+section {
+  overflow: hidden;
+}
+
+.nei {
+  position: relative;
+
+  img {
+    position: relative;
+    z-index: 1;
+  }
+
+  .nei-bg1 {
+    z-index: 0;
+    border-radius: 24px;
+    display: block;
+    border: 1px solid rgba(252, 71, 84, 0.50);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .nei-bg2 {
+    z-index: 0;
+    border-radius: 24px;
+    display: block;
+    border: 1px solid rgba(252, 71, 84, 0.50);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 7.5px;
+    bottom: 7.5px;
+  }
+}
+
+.button {
+  border: 2px solid #FF828B;
+  background: rgba(252, 71, 84, 0.98);
+  transition: 0.3s;
+
+  &:hover {
+    border: 2px solid rgb(227, 63, 74);
+    background: rgb(208, 49, 60);
+  }
+}
+
+.board {
+  border: 2px solid rgba(255, 254, 254, 0.23);
+  background: linear-gradient(91deg, rgba(255, 254, 254, 0.23) -47.11%, rgba(255, 254, 254, 0.23) 110.32%);
+}
+
+.popup-background {
+  background: rgba(255, 227, 227, 0.1) !important;
+  backdrop-filter: blur(3px) !important;
+}
