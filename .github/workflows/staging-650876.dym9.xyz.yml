@@ -33,4 +33,4 @@ jobs:
           VITE_CONTRACT_ADDRESS: "0x0E9437Cb5956aE60E35D5626a76D83132E5a89dE"
 
       - name: Push data to S3
-        run: aws s3 sync dist/ s3://staging-650876.dym9.xyz/ --acl public-read
+        run: aws s3 sync build/ s3://staging-650876.dym9.xyz/ --acl public-read
