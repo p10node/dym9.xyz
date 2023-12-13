@@ -49,6 +49,7 @@
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.1",
     "@types/react": "^18.2.43",
+    "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "^18.2.17",
     "@types/react-scroll": "^1.8.10",
     "@types/testing-library__jest-dom": "^5.14.9",

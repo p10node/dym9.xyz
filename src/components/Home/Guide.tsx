@@ -34,7 +34,7 @@ const Guide: React.FC = () => {
               </div>
               {address ? (
                 <div className="mt-1">
-                  Send a request <Code>$request {address}</Code>, wait for it success
+                  Send a request <Code copy={`$request {address}`}>$request {address}</Code>, wait for it success
                 </div>
               ) : (
                 <ConnectButton />
@@ -52,7 +52,7 @@ const Guide: React.FC = () => {
               </div>
               {address ? (
                 <div>
-                  Send a request <Code>$request {address} pierreneter_20-1</Code>, wait for it success
+                  Send a request <Code copy={`$request {address} pierreneter_20-1`}>$request {address} pierreneter_20-1</Code>, wait for it success
                 </div>
               ) : (
                 <ConnectButton />

@@ -1,13 +1,17 @@
 // Copyright 2021 - 2024 Transflox LLC. All rights reserved.
 
-import { Copy } from "@styled-icons/fluentui-system-regular";
+import { Copy as CopyIcon } from "@styled-icons/fluentui-system-regular";
 import React, { PropsWithChildren } from "react";
+import Copy from "../Copy/Copy";
 
-const Code: React.FC<PropsWithChildren> = ({ children }) => {
+const Code: React.FC<PropsWithChildren<{ copy?: string }>> = ({ children, copy }) => {
   return (
-    <div className="rounded-lg px-2 cursor-pointer code inline-flex gap-3">
-      {children} <Copy size={20} className="pt-[4px]" />
-    </div>
+    <Copy content={copy || ""}>
+      <div className="rounded-lg px-2 cursor-pointer code inline-flex gap-3">
+        {children}
+        <CopyIcon size={20} className="pt-[4px]" />
+      </div>
+    </Copy>
   );
 };
 

@@ -12,7 +12,18 @@ const Deploy: React.FC = () => {
       <div className="card container rounded-3xl mx-auto px-6 lg:px-12 py-5 overflow-hidden">
         <div className="font-bold text-2xl mb-4">Deploy your contract to DYM9</div>
 
-        <Code>
+        <Code
+          copy={`
+    dympierre: {
+      url: "https://froopyland.dymension.xyz/3/pierreneter_20-1/evmrpc",
+      chainId: 20,
+      accounts: [process.env.PRIVATE_KEY!],
+      timeout: 2_147_483_647,
+      gasPrice: 500_000,
+      blockGasLimit: 20_000_000,
+    },
+            `}
+        >
           <pre>
             {`
     dympierre: {

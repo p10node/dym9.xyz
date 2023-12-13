@@ -30,7 +30,7 @@ const Toast: React.FC<{ isOnboarding?: boolean }> = ({ isOnboarding = false }) =
   });
 
   let containerStyle: React.CSSProperties = {
-    top: 150,
+    top: 50,
     // zIndex: 5
   };
   if (isOnboarding) {
@@ -62,7 +62,7 @@ const Toast: React.FC<{ isOnboarding?: boolean }> = ({ isOnboarding = false }) =
         success: {
           style: {
             boxShadow: "none",
-            backgroundColor: "#5ff587",
+            backgroundColor: "#ebebeb",
             borderRadius: "92px",
             fontSize: "16px",
             padding: "8px 18px",
