@@ -17,7 +17,7 @@ const Guide: React.FC = () => {
         </div>
         <div className="mt-4">
           Quick deposit:{" "}
-          <a className="underline font-bold text-2xl" href="https://portal.dymension.xyz/rollapp/pierreneter_20-12" target="_blank" rel="noopener noreferrer">
+          <a className="underline font-bold text-2xl" href="https://portal.dymension.xyz/rollapp/pierreneter_20-1" target="_blank" rel="noopener noreferrer">
             pierreneter_20-1
           </a>{" "}
           <img src="/images/dym-is-money2.jpg" alt="Dymension" className="max-w-[250px] mt-2" />
@@ -64,7 +64,7 @@ const Guide: React.FC = () => {
             <div className="lg:pl-12">
               <div className="mt-3">
                 Go to RollApp page{" "}
-                <a className="underline font-bold" href="https://portal.dymension.xyz/rollapp/pierreneter_20-12" target="_blank" rel="noopener noreferrer">
+                <a className="underline font-bold" href="https://portal.dymension.xyz/rollapp/pierreneter_20-1" target="_blank" rel="noopener noreferrer">
                   pierreneter_20-1
                 </a>{" "}
               </div>
@@ -82,7 +82,7 @@ const Guide: React.FC = () => {
             <div className="lg:pl-12">
               <div className="mt-3">
                 Go to RollApp page{" "}
-                <a className="underline font-bold" href="https://portal.dymension.xyz/rollapp/pierreneter_20-12" target="_blank" rel="noopener noreferrer">
+                <a className="underline font-bold" href="https://portal.dymension.xyz/rollapp/pierreneter_20-1" target="_blank" rel="noopener noreferrer">
                   pierreneter_20-1
                 </a>{" "}
               </div>
