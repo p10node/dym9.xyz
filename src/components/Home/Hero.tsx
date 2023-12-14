@@ -203,9 +203,11 @@ const Hero: React.FC = () => {
         }
       } else {
         setCanMint(true);
-        if (mint) {
-          await mint();
-        }
+        setTimeout(async () => {
+          if (mint) {
+            await mint();
+          }
+        }, 2000);
       }
     } catch (error: any) {
       dispatch(
