@@ -29,8 +29,8 @@ jobs:
         run: pnpm build
         env:
           VITE_STAGE: "production"
-          VITE_DYM_ADDRESS: "0xe04C1f55a9A6d806f4FE9F1A2B8D2704a714E2cB"
-          VITE_CONTRACT_ADDRESS: "0x0E9437Cb5956aE60E35D5626a76D83132E5a89dE"
+          VITE_DYM_ADDRESS: "0x80b5a32E4F032B2a058b4F29EC95EEfEEB87aDcd"
+          VITE_CONTRACT_ADDRESS: "0x0E67684C8E0b002526D9d52492d49E983438537E"
 
       - name: Push data to S3
         run: aws s3 sync build/ s3://dym9.xyz/ --acl public-read
