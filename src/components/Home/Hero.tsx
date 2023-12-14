@@ -74,29 +74,44 @@ const Hero: React.FC = () => {
     ],
     enabled: !chain?.unsupported,
   });
-  const { data: writeContractResult, writeAsync: approveAsync, error } = useContractWrite(allowanceConfig);
-  const { isLoading: isApproving } = useWaitForTransaction({
-    hash: writeContractResult ? writeContractResult.hash : undefined,
-    onSuccess: async () => {
-      try {
-        refetch();
-        setCanMint(true);
+  const { data: writeContractResult, write: approveWrite } = useContractWrite(allowanceConfig);
+
+  useEffect(() => {
+    if (writeContractResult?.hash) {
+      setCanMint(true);
+      setTimeout(async () => {
         if (mint) {
           await mint();
         }
-      } catch (error: any) {
-        dispatch(
-          setToast({
-            show: true,
-            title: "",
-            message: error.message.split("\n")?.[0] || error.message,
-            type: "error",
-          }),
-        );
-        setMinting(false);
-      }
-    },
-  });
+      }, 2000);
+    }
+  }, [writeContractResult]);
+  // const { isLoading: isApproving } = useWaitForTransaction({
+  //   hash: writeContractResult ? writeContractResult.hash : undefined,
+  //   confirmations: 0,
+
+  //   onSuccess: async () => {
+  //     try {
+  //       refetch();
+  //       setCanMint(true);
+  //       setTimeout(async () => {
+  //         if (mint) {
+  //           await mint();
+  //         }
+  //       }, 2000);
+  //     } catch (error: any) {
+  //       dispatch(
+  //         setToast({
+  //           show: true,
+  //           title: "",
+  //           message: error.message.split("\n")?.[0] || error.message,
+  //           type: "error",
+  //         }),
+  //       );
+  //       setMinting(false);
+  //     }
+  //   },
+  // });
 
   const { config: writeConfig } = usePrepareContractWrite({ address: config.contractAddress, abi: config.contractAbi, functionName: "safeMint", enabled: canMint });
   const { data: mintData, status: mintStatus, isLoading: mintLoading, writeAsync: mint } = useContractWrite(writeConfig);
@@ -106,7 +121,6 @@ const Hero: React.FC = () => {
     isLoading: txLoading,
     isFetched,
   } = useWaitForTransaction({
-    confirmations: 2,
     hash: mintData?.hash,
     enabled: !!mintData?.hash,
     onSuccess() {
@@ -114,7 +128,7 @@ const Hero: React.FC = () => {
     },
   });
 
-  const loading = minting || mintLoading || txLoading || isApproving;
+  const loading = minting || mintLoading || txLoading;
   const valid = !loading && address && !chain?.unsupported;
 
   const mintSuccess = mintStatus === "success" && !!txData;
@@ -178,8 +192,14 @@ const Hero: React.FC = () => {
       setMinting(true);
 
       if (Number(ethers.utils.formatEther(allowance!)) < 0.5) {
-        if (approveAsync) {
-          await approveAsync();
+        if (approveWrite) {
+          approveWrite();
+
+          setTimeout(async () => {
+            if (mint) {
+              await mint();
+            }
+          }, 2000);
         }
       } else {
         setCanMint(true);

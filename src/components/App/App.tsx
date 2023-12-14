@@ -13,14 +13,14 @@ import Toast from "../Toast/Toast";
 
 const pierreneter: Chain = {
   id: 20,
-  name: "Pierreneter",
+  name: "P10 Chain",
   network: "pierreneter",
   iconUrl: "https://raw.githubusercontent.com/dymensionxyz/rollapp-registry/main/devnet/pierreneter_20-1/logos/pierreneter_20-1.png",
   iconBackground: "#141212",
   nativeCurrency: {
     decimals: 18,
-    name: "Pierreneter",
-    symbol: "PIE",
+    name: "NEI Token",
+    symbol: "NEI",
   },
   rpcUrls: {
     public: { http: ["https://froopyland.dymension.xyz/3/pierreneter_20-1/evmrpc"] },
