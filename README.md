@@ -27,4 +27,4 @@ pnpm dev
 
 ### Production
 
-Commit to `main` branch, then CI/CD can build for the production.
+Commit to `production` branch, then CI/CD can build for the production.
