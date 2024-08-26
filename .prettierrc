@@ -4,5 +4,7 @@
   "semi": true,
   "trailingComma": "all",
   "printWidth": 180,
-  "plugins": ["prettier-plugin-organize-imports"]
+  "plugins": [
+    "prettier-plugin-organize-imports"
+  ]
 }

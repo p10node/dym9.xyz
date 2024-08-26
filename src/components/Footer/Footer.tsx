@@ -1,5 +1,6 @@
 // Copyright 2021 - 2024 Transflox LLC. All rights reserved.
 
+import { HeartFill } from "@styled-icons/bootstrap";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -12,24 +13,18 @@ const Footer: React.FC = () => {
             <div className="text-sm mb-2">Based on</div>
             <img src="/images/logo-dymension-bright.png" alt="Dym" width={250} />
           </a>
-          <div>
-            <div className="text-sm mb-2">Member of</div>
-            <div className="flex items-center gap-2">
-              <img src="/images/lucky-badge.png" alt="Lucky" width={45} /> <span className="text-lg">Lucky Community</span>
-            </div>
-          </div>
         </div>
         <div className="flex items-center justify-center">
           <Link to="/" rel="noopener noreferrer" className="text-3xl font-mono">
             dym9.xyz
           </Link>
           <div>
-            {/* Developer by Pierre <br /> member of Lucky Research community */}
-            {/* <span className="">Touch me at</span>{" "}
+            Developer by Pierre <br /> member of Lucky Research community
+            <span className="">Touch me at</span>{" "}
             <a href="http://pierreneter.com" target="_blank" rel="noopener noreferrer" className="underline code">
               pierreneter@gmail.com
             </a>
-            <HeartFill size={26} color="#ff0000" /> */}
+            <HeartFill size={26} color="#ff0000" />
           </div>
         </div>
 
